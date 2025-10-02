@@ -5,13 +5,15 @@ import { StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffffff',
     alignItems: 'center',
-    justifyContent: 'center',
+    padding: 20 //tela inteira
+   // justifyContent: 'center',
   },
-  title: {
+  TituloCentral: {
     fontSize: 22,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    gap: 20
   }
 });
 

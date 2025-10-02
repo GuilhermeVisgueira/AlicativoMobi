@@ -3,12 +3,12 @@
 import {View, Text } from 'react-native';
 import styles from './StylesGlobal';
 
-export default function TelaLogin() {
+export default function TelaTeste() {
   
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tela Teste</Text>
+      <Text style={styles.TituloCentral}>Tela Teste</Text>
   
     </View>
   );

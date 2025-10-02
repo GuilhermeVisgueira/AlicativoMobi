@@ -8,7 +8,7 @@ export default function TelaLogin() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tela Login</Text>
+      <Text style={styles.TituloCentral}>Tela Login</Text>
   
     </View>
   );
