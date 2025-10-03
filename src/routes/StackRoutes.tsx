@@ -1,4 +1,4 @@
-import { createStackNavigator, Header } from '@react-navigation/stack';
+import { createStackNavigator} from '@react-navigation/stack';
 
 
 import TelaTeste from '../screen/TelaTeste';
