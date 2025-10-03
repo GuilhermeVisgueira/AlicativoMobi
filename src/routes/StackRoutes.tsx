@@ -16,8 +16,6 @@ export default function StackRoutes(){
         component={TelaTeste}
       />
 
-      
-
     </Stack.Navigator>
   );
 }
