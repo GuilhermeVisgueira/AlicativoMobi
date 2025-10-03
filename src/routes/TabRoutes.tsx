@@ -11,8 +11,9 @@ const Tab = createBottomTabNavigator();
 export default function TabRoutes(){
   
   return (
-    <Tab.Navigator screenOptions={{headerShown : false}}>
-      <Tab.Screen
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      
+      <Tab.Screen 
         name='Tela parte de cima'
         component={TelaLogin}
       />
