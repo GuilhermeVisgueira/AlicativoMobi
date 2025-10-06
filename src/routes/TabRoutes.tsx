@@ -18,10 +18,10 @@ export default function TabRoutes(){
         component={TelaLogin}
       />
 
-      <Tab.Screen
+     <Tab.Screen
         name='Tela Cadastro'
         component={TelaCadastro}
-      />
+      /> 
 
       <Tab.Screen 
         name='Tela teste'
