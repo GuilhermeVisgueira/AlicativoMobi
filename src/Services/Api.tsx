@@ -2,8 +2,7 @@ import axios from "axios";
 
 export const apiRequesition = axios.create({
   baseURL: 'https://apiteste.mobieduca.me',
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
+  
 });
 
 
