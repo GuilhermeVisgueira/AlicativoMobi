@@ -1,16 +1,26 @@
 import {View, Text } from 'react-native';
-import styles from './StylesGlobal';
+
+import { Button } from 'react-native-paper';
+import {UserValidation} from '../Services/Api';
 
 
+
+
+
+//Botao para testar auteticação da API
 export default function TelaTeste() {
   
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.TituloCentral}>Tela Teste</Text>
-        
+    <View>
+    <Button
+      onPress={
+        UserValidation
+      }
+      >
+        <Text> botao de requisiçao</Text>
+    </Button>
     </View>
-    
   );
 }
 

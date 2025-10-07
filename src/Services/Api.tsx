@@ -1,33 +1,31 @@
 import axios from "axios";
 
-const url = 'https://apiteste.mobieduca.me/docs/api-docs.json';
+export const apiRequesition = axios.create({
+  baseURL: 'https://apiteste.mobieduca.me',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+});
 
 
-/* async function TesteAPI() {
+export async function UserValidation() {
   
-  let Validador = await axios.get(url)
-  console.log(Validador)
+    await apiRequesition.post('/api/login/run',{
+    email :"guilherme.visgueira@mobimark.com.br",
+    senha: "guilherme@159753"
+
+  })
+    .then(resposta =>{
+    console.log(resposta)
+
+  }).catch(error => {
+    console.log(error)
+    console.log("erro")
+  })
 
 }
 
 
- */
 
-async function UserValidation () {
-  
-  let Validator = await axios.post('/user',{
-    "email": "usuario@example.com",
-    "senha": "senhaSegura123"
-  })
-    .then(response => {
-      console.log(response);
-      console.log('Verificação foi um sucesso')
-    })
-    .catch(erro => {
-      console.log(erro)
-      console.log('Ocorreu um erro')
-    })
-
-  }
+ 
 
 
