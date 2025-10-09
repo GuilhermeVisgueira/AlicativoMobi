@@ -20,7 +20,7 @@ export default function TelaTeste() {
         UserValidation(setHoldToken)
       }
       >
-        <Text> botao de requisiçao</Text>
+        <Text> TESTE STYLE BOTAO DE REQUISIÇÃO</Text>
     </Button>
     </View>
   );

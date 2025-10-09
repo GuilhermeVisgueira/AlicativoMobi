@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     gap: 20
+  },
+  TelaPrincipal: {
+
   }
 });
 

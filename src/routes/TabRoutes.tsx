@@ -4,7 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TelaLogin from '../screen/TelaLogin';
 import TelaCadastro from '../screen/TelaCadastro';
 import StackRoutes from '../routes/StackRoutes';
-
+import TelaTeste from '../screen/TelaTeste';
+import TesteStyle from '../screen/TesteStyle'
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +26,7 @@ export default function TabRoutes(){
 
       <Tab.Screen 
         name='Tela teste'
-        component={StackRoutes}
+        component={TesteStyle}
         
       />
 
