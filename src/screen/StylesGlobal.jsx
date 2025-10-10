@@ -7,16 +7,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffffff',
     alignItems: 'center',
-    padding: 20 //tela inteira
+    padding: 10 //tela inteira
    // justifyContent: 'center',
   },
   TituloCentral: {
     fontSize: 22,
     fontWeight: 'bold',
-    gap: 20
+    gap: 0
   },
   TelaPrincipal: {
 
+  },
+  DigitacaoUser: {
+    height: 12,
+    backgroundColor: '#090909ff'
+    
   }
 });
 
