@@ -2,6 +2,8 @@ import { createStackNavigator} from '@react-navigation/stack';
 
 
 import TelaTeste from '../screen/TelaTeste';
+import { TabRouter } from '@react-navigation/native';
+import TabRoutes from './TabRoutes';
 
 
 
@@ -15,7 +17,12 @@ export default function StackRoutes(){
         name='Tela TESTE'
         component={TelaTeste}
       />
-
+      <Stack.Screen
+        name='Home'
+        component={TabRoutes}
+      />
+        
+      
     </Stack.Navigator>
   );
 }

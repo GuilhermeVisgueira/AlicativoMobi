@@ -1,14 +1,20 @@
 import {View, Text } from 'react-native';
-import styles from './StylesGlobal';
 import { Button } from 'react-native-paper';
+import styles from './StylesGlobal';
 import { useState } from 'react';
-import { UserValidation } from '../Services/Api';
 import { useNavigation } from '@react-navigation/native';
+import { UserValidation } from '../Services/Api';
+
+//primeira tela
 
 export default function TelaLogin() {
   console.log ("Entrou")
   const [holdToken, setHoldToken] = useState()
+  
+  
   const Navigation = useNavigation()
+
+  
   return (
     <View style={styles.container}>
       <Text style={styles.TituloCentral}>Tela Login</Text>

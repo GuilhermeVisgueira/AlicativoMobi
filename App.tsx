@@ -1,7 +1,8 @@
-import Routes from './src/routes/index';
+import RoutesToMenu from './src/routes/index';
+
 
 export default function App() {
   return (
-    <Routes />
+    <RoutesToMenu />
   );
 }
