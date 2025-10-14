@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { UserValidation } from '../Services/Api';
 import { TextInput } from 'react-native-paper';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
   
   
   
@@ -25,29 +25,46 @@ export default function TelaLogin() {
 
   
   return (
-    <View style={styles.container}>
-      <Text style={styles.TituloCentral}>Tela Login</Text>
-      <View style={styles.container}>
+    
+
+    
+    <View style={styles.TelaPrincipal} >
+      
+      <View style={styles.StyleHeaderLogin}>
+      
+        <Text>Tela Login</Text>
+        
+      </View>  
+
+      <View style={styles.StyleValidation} >
+     
+          <TextInput style={styles.TituloCentral}
+          
+          placeholder= {text}
+          disabled
+        />
+        
+        <View>
 
 
-        <Button
+        <Button 
+        
           onPress={() =>
             Navigation.navigate('Home')
           // UserValidation(setHoldToken)
         }>
         <Text> botao de requisiçao</Text>
         </Button>
-      </View>
-      
-      <View style={styles.DigitacaoUser}>
-      <TextInput
-        placeholder= {text}
-        disabled
-      />
+        </View>
+        
       </View>
       
 
-    </View>
+      
+
+
+      </View>
+      
   );
 }
 
