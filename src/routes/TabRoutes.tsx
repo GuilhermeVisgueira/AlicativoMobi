@@ -14,14 +14,10 @@ export default function TabRoutes(){
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       
-      <Tab.Screen 
-        name='Tela parte de cima'
-        component={TelaLogin}
-      />
-
+      
      <Tab.Screen
-        name='Tela Cadastro'
-        component={TelaCadastro}
+        name='Tela Teste'
+        component={TelaTeste}
       /> 
 
       <Tab.Screen 

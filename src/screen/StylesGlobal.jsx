@@ -1,33 +1,33 @@
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 
 
 const styles = StyleSheet.create({
   StyleHeaderLogin: {
     flex: 0.5,
-    backgroundColor: '#ff02c8ff',
+    backgroundColor: '#fcf6faff',
     margin: 20,
-    alignItems: 'center',
-    
-    
+    alignItems: 'center', //coloca no meio da flex de forma horizontal
+    justifyContent: 'center', //coloca no meio da flex de forma vertical
+
   },
   StyleValidation: {
-    flex: 1,
-    backgroundColor: '#c50c0cff',
-    alignItems: 'center',
+
+    backgroundColor: '#f9f2f2ff',
+
     margin: 20
-    
+
     //tela inteira
     // justifyContent: 'center',
   },
   TituloCentral: {
     fontSize: 22,
     fontWeight: 'bold',
-    
+
   },
   TelaPrincipal: {
     flex: 1,
-    backgroundColor: '#16e45bff',
+    backgroundColor: '#f6f6f6ff',
     margin: 18
 
   },
@@ -37,13 +37,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   Botao: {
-    backgroundColor: '#000',
-    margin: 40,
-    flex: 1
+    backgroundColor: '#0f59efff',
+
+
+
   },
   TextoLogin: {
-    
-  }
+
+    fontSize: 40,
+    color: '#0f59efff'
+  },
+  TextBotaoLogin: {
+    backgroundColor: '#ffffffff',
+  },
 });
 
 export default styles;

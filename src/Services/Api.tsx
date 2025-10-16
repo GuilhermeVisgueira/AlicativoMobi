@@ -32,6 +32,11 @@ export async function UserValidation(setHoldToken : any) {
   })
   
 
+
+  //await apiRequesition.get('/api/login/run',{
+     //headers pesquisar 
+
+  //})
 }
 
 
