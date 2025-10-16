@@ -8,12 +8,12 @@ export const apiRequesition = axios.create({
 
 
 
-export async function UserValidation( email: string, senha: string) {
+export async function UserValidation( LocalEmail: string, LocalSenha: string) {
 
 
     await apiRequesition.post('/api/login/run',{
-    email :"guilherme.visgueira@mobimark.com.br",
-    senha: "guilherme@159753"
+    email : LocalEmail,
+    senha: LocalSenha
 
   })
     .then(resposta => {

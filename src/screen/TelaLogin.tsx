@@ -20,8 +20,8 @@ export default function TelaLogin() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  
-  
+
+
 
 
 
@@ -39,16 +39,17 @@ export default function TelaLogin() {
           <TextInput
             placeholder='Email' //pode se colocar o {text} que possui o texto como padrao
             disabled
+            onChangeText={novoTextoEmail => setEmail(novoTextoEmail)}
             
-            onChangeText={setEmail}
           />
         </View>
 
         <View >
           <TextInput
+            onChangeText={novoTextoPass => setSenha(novoTextoPass)}
             placeholder='Senha'
             disabled
-            onChangeText={setSenha}
+
           />
         </View>
 
@@ -60,6 +61,7 @@ export default function TelaLogin() {
             onPress={() => {
 
 
+              UserValidation(email, senha)
 
               Navigation.navigate('Home')
               //UserValidation(setHoldToken)
