@@ -8,7 +8,7 @@ export const apiRequesition = axios.create({
 
 
 
-export async function UserValidation(setHoldToken : any) {
+export async function UserValidation( email: string, senha: string) {
 
 
     await apiRequesition.post('/api/login/run',{
