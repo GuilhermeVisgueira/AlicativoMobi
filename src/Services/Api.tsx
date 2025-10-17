@@ -17,8 +17,8 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
   })
 
 
+    // mostrando no console o token
     .then(resposta => {
-      // mostrando no console o token
       //console.log(resposta.data.token)
       //-------
       //pegando o token e e jogando em uma variavel
@@ -28,18 +28,13 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
       return 200;
     })
 
-
+    //retorna o erro
     .catch(error => {
       console.log(error)
-      return 500
-      
+      return "Login ou senha invalidos"
+
     })
 
-
-  //await apiRequesition.get('/api/login/run',{
-  //headers pesquisar 
-
-  //})
 }
 
 
