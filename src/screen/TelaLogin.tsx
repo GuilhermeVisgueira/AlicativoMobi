@@ -13,14 +13,21 @@ import { TextInput } from 'react-native-paper';
 
 export default function TelaLogin() {
   console.log("Entrou")
-  const [holdToken, setHoldToken] = useState()
+  //const [holdToken, setHoldToken] = useState()
   const Navigation = useNavigation()
 
-  //const textUser, setTextUser = React.useState('Digite o login')
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-
+  async function waitResposta() {
+    const resposta = await UserValidation(email, senha)
+   console.log (resposta)
+    if (resposta === 200) {
+                Navigation.navigate('Home')
+                
+              }
+ }
 
 
 
@@ -38,18 +45,18 @@ export default function TelaLogin() {
         <View >
           <TextInput
             placeholder='Email' //pode se colocar o {text} que possui o texto como padrao
-            disabled
-            onChangeText={novoTextoEmail => setEmail(novoTextoEmail)}
             
+            onChangeText={novoTextoEmail => setEmail(novoTextoEmail)}
+
           />
         </View>
 
         <View >
           <TextInput
+
             onChangeText={novoTextoPass => setSenha(novoTextoPass)}
             placeholder='Senha'
-            disabled
-
+            
           />
         </View>
 
@@ -59,11 +66,9 @@ export default function TelaLogin() {
           <Button
             textColor='#ffffffff'
             onPress={() => {
-
-
-              UserValidation(email, senha)
-
-              Navigation.navigate('Home')
+              waitResposta()
+              //oq eu preciso para validar no if????
+              
               //UserValidation(setHoldToken)
             }
             }>
