@@ -50,6 +50,12 @@ const styles = StyleSheet.create({
   TextBotaoLogin: {
     backgroundColor: '#ffffffff',
   },
+  TituloLista: {
+    alignItems: 'center',
+    fontSize: 40,
+    color: '#0f59efff',
+    justifyContent: 'center',
+  }
 });
 
 export default styles;

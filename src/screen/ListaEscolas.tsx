@@ -1,32 +1,40 @@
 
 
 import { StyleSheet, View, Text } from 'react-native';
+import {Searchbar, List } from 'react-native-paper';
+
+import { useState } from 'react';
+import styles from './StylesGlobal';
 
 
-export default function ListaEscolas() {
-  
+export default function ListaEscolas  ()  {
+
+  const [pesquisar, setPesquisar] = useState("Pesquisar")
+
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> Lista Escolas</Text>
-  
+    <View style={styles.TelaPrincipal}>
+
+      <Text style={styles.TituloLista}>Lista Escolas</Text>
+
+      <View>
+
+        <Searchbar
+          value={pesquisar}
+          placeholder="Search"
+          onChangeText={setPesquisar}
+        />
+
+
+      </View>
+
     </View>
+
   );
 }
 
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold'
-  }
-});
+
 
 

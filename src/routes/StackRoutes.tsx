@@ -14,13 +14,16 @@ export default function StackRoutes(){
   
   return (
     <Stack.Navigator>
+      
       <Stack.Screen
         name='Tela TESTE'
         component={TelaLogin}
       />
       <Stack.Screen
-        name='Home'
+        
+        name='Login'
         component={TabRoutes}
+        
       />
         
       
