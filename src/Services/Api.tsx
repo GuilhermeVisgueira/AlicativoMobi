@@ -5,8 +5,10 @@ export const apiRequesition = axios.create({
   baseURL: 'https://apiteste.mobieduca.me',
 });
 
-//guilherme.visgueira@mobimark.com.br 
+//guilherme.visgueira@mobimark.com.br
 //guilherme@159753
+
+
 
 export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 
@@ -38,7 +40,24 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 }
 
 
+export async function EscolasApi(setListagemEscolaAPI) {
+  return await apiRequesition.get('/api/escolas'
 
+  )
+    .then(resposta => {
+
+      setListagemEscolaAPI(resposta.data)
+
+    })
+    .catch(error => {
+
+      console.log(error)
+      return "Login ou senha invalidos"
+    })
+
+
+  
+}
 
 
 
