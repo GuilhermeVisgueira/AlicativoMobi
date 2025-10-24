@@ -1,6 +1,5 @@
 
 
-import { StyleSheet, View, Text } from 'react-native';
 import { View, Text, FlatList } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { EscolasApi } from '../Services/Api';
@@ -100,8 +99,7 @@ export default function ListaEscolas() {
     )
   }
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> Lista Escolas</Text>
+    
   
     <View style={styles.TelaPrincipal}>
 
@@ -130,20 +128,3 @@ export default function ListaEscolas() {
     </View>
   );
 }
-
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold'
-  }
-});
-
-
