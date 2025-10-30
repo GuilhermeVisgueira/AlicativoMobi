@@ -6,6 +6,7 @@ import TelaCadastro from '../screen/TelaCadastro';
 import StackRoutes from '../routes/StackRoutes';
 import TelaTeste from '../screen/TelaTeste';
 import TesteStyle from '../screen/TesteStyle'
+import ListaEscolas from '../screen/ListaEscolas';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,13 +17,13 @@ export default function TabRoutes(){
       
       
      <Tab.Screen
-        name='Tela Teste'
-        component={TelaTeste}
+        name='Listagem'
+        component={ListaEscolas}
       /> 
 
       <Tab.Screen 
-        name='Tela teste'
-        component={TesteStyle}
+        name='Cadastro'
+        component={TelaCadastro}
         
       />
 

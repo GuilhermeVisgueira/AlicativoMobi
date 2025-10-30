@@ -50,6 +50,12 @@ const styles = StyleSheet.create({
   TextBotaoLogin: {
     backgroundColor: '#ffffffff',
   },
+  TituloLista: {
+
+    fontSize: 40,
+    color: '#0f59efff'
+  },
+  
 });
 
 export default styles;

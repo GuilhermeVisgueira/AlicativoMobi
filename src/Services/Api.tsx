@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from 'react'; 
+import { UseStade } from 'react'; 
 
 export const apiRequesition = axios.create({
   baseURL: 'https://apiteste.mobieduca.me',
@@ -7,15 +7,15 @@ export const apiRequesition = axios.create({
 
 //guilherme.visgueira@mobimark.com.br 
 //guilherme@159753
-//let tokenTaked : string
+let tokenTaked : string
 export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 
-  const [tokenTake, setTokenTake] = UseStade('')
+  //const [tokenTake, setTokenTake] = UseStade('')
 
   return await apiRequesition.post('/api/login/run', {
     email: LocalEmail,
-    senha: LocalSenha
-
+    senha: LocalSenha 
+    
   })
 
 
@@ -24,27 +24,31 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
       //console.log(resposta.data.token)
       //-------
       //pegando o token e e jogando em uma variavel
-  //    tokenTaked = resposta.data.token 
+      tokenTaked = resposta.data.token 
       //console.log(takedToken)
       //setHoldToken(resposta.data.token)
-      
+      console.log(tokenTaked)
       return 200;
     })
 
     //retorna o erro
     .catch(() => {
       
+      
       return "Login ou senha invalidos"
-
     })
 
 }
 
 
-/* export async function EscolasApi(setListagemEscolaAPI) {
+export async function EscolasApi(setListagemEscolaAPI) {
   return await apiRequesition.get('/api/escolas', {
     headers: {
-      'token': tokenTaked
+
+      Authorization: `Bearer ${'729|NIDabf4xEpAWWKO912tdkz0LCAqrylOhE9BpQ23c47a4a3f6'}`
+      //possivelmente o token nome do token é (X-CSRF-TOKEN)
+      
+      //'token': tokenTaked
     }
   }
 
@@ -57,12 +61,10 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
     .catch(error => {
 
       console.log(error)
-      return "Login ou senha invalidos"
+      return "Erro ao acessar as escolas"
     })
 
-
-  
-} */
+}
 
 
 

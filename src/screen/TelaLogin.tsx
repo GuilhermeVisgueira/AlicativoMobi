@@ -13,13 +13,14 @@ import { TextInput } from 'react-native-paper';
 
 export default function TelaLogin() {
   console.log("att a pagina")
-  const [holdToken, setHoldToken] = useState("")
+  //const [holdToken, setHoldToken] = useState("")
   const Navigation = useNavigation()
 
 
   const [email, setEmail] = useState("guilherme.visgueira@mobimark.com.br");
   const [senha, setSenha] = useState("guilherme@159753");
   //comentado o metodo pois nao estava conseguindo a requisição da api
+  
   async function waitResposta() {
     const resposta = await UserValidation(email, senha)
     console.log(resposta)

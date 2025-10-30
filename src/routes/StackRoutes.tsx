@@ -15,7 +15,7 @@ export default function StackRoutes(){
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name='Tela TESTE'
+        name='Login'
         component={TelaLogin}
       />
       <Stack.Screen

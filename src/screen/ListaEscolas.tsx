@@ -18,10 +18,12 @@ export default function ListaEscolas() {
   const [pesquisar, setPesquisar] = useState("")
   const [listagemEscolasAPI, setListagemEscolasAPI] = useState([])
 
-  /* useEffect(() => {
+  // ta quebrando quando eu habilito essa função = provavel motivo era pq dentro da função da api ela nao
+  // tava recebendo o token como header
+   useEffect(() => {
     EscolasApi(setListagemEscolasAPI)
 
-  },[]) */
+  },[]) 
 
 
   const lista = [
@@ -95,7 +97,7 @@ export default function ListaEscolas() {
 
   const objetolista = ({ item }) => {
     return (
-      <Text style={{ color: '#e90606ff' }} >{item.id}</Text>
+      <Text style={{ color: '#e90606ff' }} >{item.nome}</Text>
     )
   }
   return (
@@ -118,8 +120,9 @@ export default function ListaEscolas() {
         //data deve ter a propria lista, no caso usando api seria passado todas as listas
         //depois de pegar e validar o acesso com o token
         //no momento ele ta pegando a lista mocada que é uma lista que possui dentro do proprio codigo
-        data={lista} // tinha lista
-        renderItem={objetolista}
+        data={lista} // passar minha informações da api
+        renderItem={objetolista} // vai olhar cada um dos itens passados pela data e listar
+        
 
 
       />
