@@ -54,8 +54,8 @@ export async function EscolasApi(setListagemEscolaAPI) {
 
   )
     .then(resposta => {
-
-      setListagemEscolaAPI(resposta.data)
+      console.log(resposta.data)
+      return setListagemEscolaAPI(resposta.data)
 
     })
     .catch(error => {

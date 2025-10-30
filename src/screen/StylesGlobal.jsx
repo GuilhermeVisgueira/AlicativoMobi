@@ -55,7 +55,11 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: '#0f59efff'
   },
-  
+  Listagem: {
+    alignItems: 'center',
+    fontSize: 15,
+    
+  }
 });
 
 export default styles;

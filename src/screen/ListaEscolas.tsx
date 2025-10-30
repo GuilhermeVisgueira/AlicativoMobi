@@ -97,7 +97,7 @@ export default function ListaEscolas() {
 
   const objetolista = ({ item }) => {
     return (
-      <Text style={{ color: '#e90606ff' }} >{item.nome}</Text>
+      <Text style={styles.Listagem} >{item.nome}</Text>
     )
   }
   return (
@@ -118,9 +118,9 @@ export default function ListaEscolas() {
 
       <FlatList
         //data deve ter a propria lista, no caso usando api seria passado todas as listas
-        //depois de pegar e validar o acesso com o token
+        
         //no momento ele ta pegando a lista mocada que é uma lista que possui dentro do proprio codigo
-        data={lista} // passar minha informações da api
+        data={listagemEscolasAPI} // passar minha informações da api
         renderItem={objetolista} // vai olhar cada um dos itens passados pela data e listar
         
 
