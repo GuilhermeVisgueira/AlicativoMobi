@@ -62,7 +62,7 @@ export default function ListaEscolas() {
     },
     {
       "id": 2,
-      "nome": "AAAAA",
+      "nome": "Escola 2",
       "diretor": "Conceição",
       "localizacao": 1,
       "usuario_id": 1,
@@ -92,7 +92,40 @@ export default function ListaEscolas() {
           "sigla": "PI"
         }
       }
-    }
+    },
+    {
+      "id": 3,
+      "nome": "Escola 3",
+      "diretor": "Conceição",
+      "localizacao": 1,
+      "usuario_id": 1,
+      "cidade_id": 2211308,
+      "created_at": "30-08-2024 18:34:35",
+      "updated_at": "30-08-2024 18:34:35",
+      "zona": "Urbana",
+      "turnos": [
+        {
+          "escola_id": 3,
+          "turno_sigla": "M",
+          "turno": "Manhã"
+        }
+      ],
+      "usuario": {
+        "id": 1,
+        "name": "Usuário Teste",
+        "email": "teste@exemplo.com.br"
+      },
+      "cidade": {
+        "id": 2211308,
+        "estado_id": 22,
+        "descricao": "VALENCA DO PIAUI",
+        "estado": {
+          "id": 22,
+          "descricao": "Piauí",
+          "sigla": "PI"
+        }
+      }
+    },
   ]
 
   const objetolista = ({ item }) => {
@@ -122,7 +155,7 @@ export default function ListaEscolas() {
         //no momento ele ta pegando a lista mocada que é uma lista que possui dentro do proprio codigo
         data={listagemEscolasAPI} // passar minha informações da api
         renderItem={objetolista} // vai olhar cada um dos itens passados pela data e listar
-        
+        pagingEnabled
 
 
       />

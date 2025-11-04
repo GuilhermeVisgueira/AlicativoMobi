@@ -43,6 +43,9 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 
 export async function EscolasApi(setListagemEscolaAPI) {
   return await apiRequesition.get('/api/escolas', {
+    params: {
+      page: 1
+    },
     headers: {
 
       Authorization: `Bearer ${'729|NIDabf4xEpAWWKO912tdkz0LCAqrylOhE9BpQ23c47a4a3f6'}`
