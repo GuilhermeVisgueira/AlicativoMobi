@@ -16,7 +16,7 @@ export default function ListaEscolas() {
   
 
   const [pesquisar, setPesquisar] = useState("")
-  const [listagemEscolasAPI, setListagemEscolasAPI] = useState([])
+  const [listagemEscolasAPI, setListagemEscolasAPI] = useState()
 
   // ta quebrando quando eu habilito essa função = provavel motivo era pq dentro da função da api ela nao
   // tava recebendo o token como header
@@ -131,8 +131,10 @@ export default function ListaEscolas() {
   const objetolista = ({ item }) => {
     return (
       <Text style={styles.Listagem} >{item.nome}</Text>
+
     )
   }
+  console.log(listagemEscolasAPI)
   return (
     
   
@@ -153,7 +155,10 @@ export default function ListaEscolas() {
         //data deve ter a propria lista, no caso usando api seria passado todas as listas
         
         //no momento ele ta pegando a lista mocada que é uma lista que possui dentro do proprio codigo
-        data={listagemEscolasAPI} // passar minha informações da api
+        data={listagemEscolasAPI?.data} // passar minha informações da api
+        // não tava aparecendo os dados da lista da api quando eu colocava data={listagemEscolasAPI}
+        // pois eu deveria acessar os dados usando data, ja que as escolas estavam dentro desse parametro
+        // a ? (operação ternaria) ta mostrando caso aja algum objeto da requisição da api
         renderItem={objetolista} // vai olhar cada um dos itens passados pela data e listar
         pagingEnabled
 
