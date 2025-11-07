@@ -1,7 +1,7 @@
 
 
 import { View, Text, FlatList } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import { Button, Searchbar } from 'react-native-paper';
 import { EscolasApi } from '../Services/Api';
 
 import { useState, useEffect } from 'react';
@@ -134,11 +134,13 @@ export default function ListaEscolas() {
 
     )
   }
+  //mostrando no reatron as escolas recebidas
   console.log(listagemEscolasAPI)
+  //----
   return (
     
   
-    <View style={styles.TelaPrincipal}>
+    <View>
 
       <Text style={styles.TituloLista}>Lista Escolas</Text>
 
@@ -149,7 +151,16 @@ export default function ListaEscolas() {
           onChangeText={setPesquisar}
         />
       </View>
-
+      
+      <View>
+        {/* botao para filtrar as escolas em cidades */}
+        <Button
+        textColor='#de0909ff'
+        >
+          
+          <Text>Filtro</Text>
+        </Button>
+      </View>
 
       <FlatList
         //data deve ter a propria lista, no caso usando api seria passado todas as listas

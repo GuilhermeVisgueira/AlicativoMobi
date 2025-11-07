@@ -1,5 +1,5 @@
 import axios from "axios";
-import { UseStade } from 'react'; 
+
 
 export const apiRequesition = axios.create({
   baseURL: 'https://apiteste.mobieduca.me',
@@ -40,7 +40,10 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 
 }
 
-
+//  recebe como parametro da função useState(que muda a listagem de das escolas atravez do parametro setListagemEscolasAPI)
+//  retorna a api das escolas, params/ page a paginação
+//  headers com a autenticação do totenk
+//  em seguida funções da api .then e .catch para sucesso e fracasso
 export async function EscolasApi(setListagemEscolaAPI) {
   return await apiRequesition.get('/api/escolas', {
     params: {
@@ -49,9 +52,7 @@ export async function EscolasApi(setListagemEscolaAPI) {
     headers: {
 
       Authorization: `Bearer ${'729|NIDabf4xEpAWWKO912tdkz0LCAqrylOhE9BpQ23c47a4a3f6'}`
-      //possivelmente o token nome do token é (X-CSRF-TOKEN)
       
-      //'token': tokenTaked
     }
   }
 
@@ -69,5 +70,39 @@ export async function EscolasApi(setListagemEscolaAPI) {
 
 }
 
+//-----
+/* 
+Get das Estado
+*/
+export async function GetEstadoAPI(params:type) {
+  return await apiRequesition.get('/api/estados', {
+    
+  })
+}
+
+//-----
+/* 
+Get das Cidades
+*/
+
+export async function GetCidadeAPI(params:type) {
+  return await apiRequesition.get('/api/cidades', {
+    
+  })
+}
 
 
+/* 
+criar função que crie na api as escolas 
+*/
+
+
+/* export async function APICadastroSchool() {
+  
+  return await apiRequesition.post('/api/escolas'
+
+
+  )
+
+
+} */

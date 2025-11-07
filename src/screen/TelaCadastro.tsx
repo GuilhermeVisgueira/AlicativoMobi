@@ -1,32 +1,22 @@
 
 
 import { StyleSheet, View, Text } from 'react-native';
-
+import styles from './StylesGlobal';
 
 export default function TelaCadastro() {
-  
+
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tela Cadastro</Text>
-  
+
+    <View >
+
+      <Text style={styles.TituloLista}>Tela Cadastro</Text>
+
     </View>
   );
 }
 
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold'
-  }
-});
 
 
