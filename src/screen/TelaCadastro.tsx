@@ -3,27 +3,40 @@
 import { FlatList, View, Text } from 'react-native';
 import styles from './StylesGlobal';
 import { useEffect, useState } from 'react';
-import { GetEstadoAPI, GetCidadeAPI } from '../Services/Api';
+import { GetEstadoAPI, GetCidadeAPI, APICadastroSchool, EscolasApi } from '../Services/Api';
+import { Picker } from '@react-native-picker/picker';
+import { Button } from 'react-native-paper';
+
+
 
 export default function TelaCadastro() {
+
+
+  /* função para chamar o metodo post */
+
+
 
   /* usar o useStade para criar um objeto de listagem e passar para a api 
     a listagem de todo os estados
   */
   const [listaEstadosAPI, setListaEstadosAPI] = useState()
   const [listaCidadesAPI, setListaCidadesAPI] = useState()
-
-
+  const [teste, setteste] = useState()
+  
+  /* usar o return no useeffect:
+  quando saio do componente ira executar oq esta no return
+  */
   useEffect(() => {
+    //EscolasApi(setListaCidadesAPI)
     GetEstadoAPI(setListaEstadosAPI)
     GetCidadeAPI(setListaCidadesAPI)
-  }, [])
+  }, [teste])
 
 
   const objetolista = ({ item }) => {
     return (
-      <Text style={styles.Listagem} >{item.descricao}</Text>
-
+      <Text style={styles.Listagem} >Cidade: {item.descricao} ID: {item.id}</Text>
+      
     )
   }
   return (
@@ -37,39 +50,47 @@ export default function TelaCadastro() {
     <View >
       <Text style={styles.TituloLista}>Tela Cadastro</Text>
 
-      <View>
+      {/* <View>
         <Text>Estados -----</Text>
-        {/* parte das estados, adicionar os pickes( seleção de estados e cidades)  */}
+        
         <FlatList
 
-          //data deve ter a propria lista, no caso usando api seria passado todas as listas
-          //no momento ele ta pegando a lista mocada que é uma lista que possui dentro do proprio codigo
-          data={listaEstadosAPI} // passar minha informações da api
-          // não tava aparecendo os dados da lista da api quando eu colocava data={listagemEscolasAPI}
-          // pois eu deveria acessar os dados usando data, ja que as escolas estavam dentro desse parametro
-          // a ? (operação ternaria) ta mostrando caso aja algum objeto da requisição da api
-          renderItem={objetolista} // vai olhar cada um dos itens passados pela data e listar
+
+          data={listaEstadosAPI}
+          renderItem={objetolista}
           pagingEnabled
         />
-      </View>
-      <View>
+      </View> */}
+
+       <View>
         <Text>
           Cidades -----</Text>
-        {/* parte das cidades, adicionar os pickes( seleção de estados e cidades)  */}
         <FlatList
-          //data deve ter a propria lista, no caso usando api seria passado todas as listas
-          //no momento ele ta pegando a lista mocada que é uma lista que possui dentro do proprio codigo
-          data={listaCidadesAPI} // passar minha informações da api
-          // não tava aparecendo os dados da lista da api quando eu colocava data={listagemEscolasAPI}
-          // pois eu deveria acessar os dados usando data, ja que as escolas estavam dentro desse parametro
-          // a ? (operação ternaria) ta mostrando caso aja algum objeto da requisição da api
-          renderItem={objetolista} // vai olhar cada um dos itens passados pela data e listar
+        data={listaCidadesAPI} 
+        renderItem={objetolista}
           pagingEnabled
         />
 
+      </View> 
+
+      <View>
+        <Text> Seleção de turnos utilização do checkbox </Text>
       </View>
 
 
+      <View style={styles.Botao}>
+        <Button
+          textColor='#fff'
+          onPress={() => {
+            APICadastroSchool()
+            
+          }}
+        >
+
+          <Text>Botao para a requisição do post escolas</Text>
+
+        </Button>
+      </View>
 
     </View>
   );

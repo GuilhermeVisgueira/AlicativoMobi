@@ -74,7 +74,7 @@ export default function TelaLogin() {
               waitResposta()
               
 
-              //UserValidation(setHoldToken)
+              
             }
             }>
             <Text > Entrar</Text>

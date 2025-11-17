@@ -47,7 +47,7 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 export async function EscolasApi(setListagemEscolaAPI) {
   return await apiRequesition.get('/api/escolas', {
     params: {
-      page: 1
+      page: 2
     },
     headers: {
       // depois adicionar o token como uma variavel
@@ -119,12 +119,35 @@ criar função que crie na api as escolas
 */
 
 
-/* export async function APICadastroSchool() {
-  
-  return await apiRequesition.post('/api/escolas'
+export async function APICadastroSchool() {
 
+
+
+  return await apiRequesition.post('/api/escolas', {
+
+    nome: "Teste Axios Post1",
+    cidade_id: 1,
+    localizacao: 1,
+    turnos: [
+      "M"
+    ],
+  }, {
+
+    headers: {
+      // depois adicionar o token como uma variavel
+      Authorization: `Bearer ${'729|NIDabf4xEpAWWKO912tdkz0LCAqrylOhE9BpQ23c47a4a3f6'}`
+
+    }
+  }
 
   )
+    .then(() => {
+      return "Cadastro realizado com sucesso"
+    })
 
+    .catch(error => {
+      console.log(error)
+      return "Erro ao cadastrar"
+    })
 
-} */
+} 
