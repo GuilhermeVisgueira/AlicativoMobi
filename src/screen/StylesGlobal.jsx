@@ -59,6 +59,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontSize: 15,
     
+  }, 
+  checkboxTurnos: {
+    flexDirection: 'row',
+    gap: 50,
+    justifyContent: 'center',
   }
 });
 
