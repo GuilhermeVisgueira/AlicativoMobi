@@ -47,7 +47,7 @@ export async function UserValidation(LocalEmail: string, LocalSenha: string) {
 export async function EscolasApi(setListagemEscolaAPI) {
   return await apiRequesition.get('/api/escolas', {
     params: {
-      page: 2
+      page: 1
     },
     headers: {
       // depois adicionar o token como uma variavel
@@ -125,8 +125,8 @@ export async function APICadastroSchool() {
 
   return await apiRequesition.post('/api/escolas', {
 
-    nome: "Teste Axios Post1",
-    cidade_id: 1,
+    nome: "Teste Axios Post2",
+    cidade_id: 1100015,
     localizacao: 1,
     turnos: [
       "M"
