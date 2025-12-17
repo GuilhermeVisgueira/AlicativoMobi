@@ -95,6 +95,8 @@ export async function GetEstadoAPI(setListaEstadosAPI) {
 //-----
 /* 
 Get das Cidades
+devo por o algum parametro para cidades receber, referente aos estados
+e assim retornando as cidades desses estados
 */
 
 export async function GetCidadeAPI(setListaCidadeAPI) {
