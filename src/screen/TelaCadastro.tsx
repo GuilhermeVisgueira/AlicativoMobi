@@ -1,6 +1,6 @@
 
 
-import { FlatList, View, Text } from 'react-native';
+import { FlatList, View, Text, TextInput } from 'react-native';
 import styles from './StylesGlobal';
 import { useEffect, useState } from 'react';
 import { GetEstadoAPI, GetCidadeAPI, APICadastroSchool, EscolasApi } from '../Services/Api';
@@ -18,10 +18,10 @@ export default function TelaCadastro() {
 
 
 
-
-
   const [toggleCheckBox, setToggleCheckBox] = useState([])
-
+  /* Caixa de texto  */
+  const [escola, setEscola] = useState('');
+  const [diretor, setDiretor] = useState('');
   /* estados do picker para a seleção do item */
   const [pikerEstado, setPikerEstado] = useState("");
   /* cidades do picker para a seleção do item */
@@ -48,6 +48,20 @@ export default function TelaCadastro() {
   const [listaCidadesAPI, setListaCidadesAPI] = useState(null)
   const [cidadeSelecionada, setCidadeSelecionada] = useState(null)
 
+  /* funcao para a cor selecionada. Receber a escola selecionada e tambem
+  alterar o setEstadoSelecionado para o estado selecionado bem como alterar
+  o estado
+  */
+
+  function SelectAndHoldEstado(Estado) {
+    setPikerEstado(Estado)
+    setEstadoSelecionado(Estado)
+  }
+
+  function SelectAndHoldCidade(Cidade) {
+    setCidadeSelecionada(Cidade)
+    setCidadeSelecionada(Cidade)
+  }
   /* usar o return no useeffect:
   quando saio do componente ira executar oq esta no return
   */
@@ -204,20 +218,24 @@ export default function TelaCadastro() {
         <Text> Seleção de turnos utilização do checkbox </Text>
       </View>
 
-
-      <View style={styles.Botao}>
-        <Button
-          textColor='#fff'
-          onPress={() => {
-            APICadastroSchool()
-
-          }}
-        >
-
-          <Text>Botao para a requisição do post escolas</Text>
-
-        </Button>
+      <View>
+        <TextInput
+          ///style={styles.input} posteriormente adicionar style
+          onChangeText={setEscola}
+          value={escola}
+          placeholder="Nome da Escola"
+        />
       </View>
+
+     <View>
+        <TextInput
+          ///style={styles.input} posteriormente adicionar style
+          onChangeText={setDiretor}
+          value={diretor}
+          placeholder="Nome do Diretor"
+        />
+      </View> 
+
       {/* checkbox para seleção de turnos */}
       <View style={styles.checkboxTurnos}>
 
@@ -266,14 +284,14 @@ export default function TelaCadastro() {
 
       </View>
 
+
       <View>
 
         <Text> Estados </Text>
         <Picker
-          
+
           selectedValue={pikerEstado}
-          onValueChange={(itemValue, itemIndex) =>
-            setPikerEstado(itemValue)
+          onValueChange={(estadoSelecionadoLocal) => SelectAndHoldEstado(estadoSelecionadoLocal)
 
           }>
           {/* usando o {} para incluir um codigo javascript, e comparando o listaEstadosAPI 
@@ -281,10 +299,12 @@ export default function TelaCadastro() {
           comparação com o && meio que é aceitar o jeito do javascript é assim, o map
           tem a função de passar todos os estados que a api retorna no picker, label 
           aparentimente mostra o nome do item no picker, value e key nao sao mostrados
-          e nao sei exatamente para que estao ali*/}
+          e nao sei exatamente para que estao ali. Aparentimente devo fazer uma
+          que faça os valores do estadoSelecionado serem recebidos*/}
           {listaEstadosAPI && listaEstadosAPI.length > 0 && listaEstadosAPI.map((estado) =>
             < Picker.Item label={estado.descricao} value={estado.id} key={estado.id} />)
-            
+
+
           }
 
         </Picker>
@@ -295,7 +315,7 @@ export default function TelaCadastro() {
         <Picker
 
           selectedValue={pikerCidade}
-          onValueChange={(itemValue, itemIndex) =>
+          onValueChange={(itemValue) =>
             setPikerCidade(itemValue)
           }>
 
@@ -305,6 +325,19 @@ export default function TelaCadastro() {
         </Picker>
       </View>
 
+      <View style={styles.Botao}>
+        <Button
+          textColor='#fff'
+          onPress={() => {
+            APICadastroSchool()
+
+          }}
+        >
+
+          <Text>Confirmar</Text>
+
+        </Button>
+      </View>
     </View>
 
 

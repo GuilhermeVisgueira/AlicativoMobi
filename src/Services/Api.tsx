@@ -51,7 +51,7 @@ export async function EscolasApi(setListagemEscolaAPI) {
     },
     headers: {
       // depois adicionar o token como uma variavel
-      Authorization: `Bearer ${'729|NIDabf4xEpAWWKO912tdkz0LCAqrylOhE9BpQ23c47a4a3f6'}`
+      Authorization: `Bearer ${'846|ZaLCv1yzGymAPTF5JHE5pnCyhcnKzGwpUV6s8TNd8b34be35'}`
 
     }
   }

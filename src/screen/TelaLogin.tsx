@@ -20,7 +20,7 @@ export default function TelaLogin() {
   const [email, setEmail] = useState("guilherme.visgueira@mobimark.com.br");
   const [senha, setSenha] = useState("guilherme@159753");
   //comentado o metodo pois nao estava conseguindo a requisição da api
-  
+
   async function waitResposta() {
     const resposta = await UserValidation(email, senha)
     console.log(resposta)
@@ -50,17 +50,17 @@ export default function TelaLogin() {
           <TextInput
             placeholder='Email' //pode se colocar o {text} que possui o texto como padrao ex: placeholder={text}
             value={email}
-          onChangeText={novoTextoEmail => setEmail(novoTextoEmail)}
+            onChangeText={novoTextoEmail => setEmail(novoTextoEmail)}
 
           />
         </View>
 
         <View >
           <TextInput
-            //secureTextEntry
+            secureTextEntry
             placeholder='Senha'
             value={senha}
-          onChangeText={novoTextoPass => setSenha(novoTextoPass)}
+            onChangeText={novoTextoPass => setSenha(novoTextoPass)}
           />
         </View>
 
@@ -72,9 +72,6 @@ export default function TelaLogin() {
             onPress={() => {
               //metodo validação de login e senha
               waitResposta()
-              
-
-              
             }
             }>
             <Text > Entrar</Text>

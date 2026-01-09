@@ -1,0 +1,5 @@
+function SelectAndHoldEstado(estadoSelecionadoLocal, ) {
+  
+  const 
+
+}
