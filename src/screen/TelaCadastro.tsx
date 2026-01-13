@@ -52,13 +52,17 @@ export default function TelaCadastro() {
   alterar o setEstadoSelecionado para o estado selecionado bem como alterar
   o estado
   */
-
+  /* função para chamar a api dos estados e adicionar no piker */
   function SelectAndHoldEstado(Estado) {
     setPikerEstado(Estado)
+    //pegando o parametro de entrada de estado e colocando o id nele
     setEstadoSelecionado(Estado)
+
   }
 
   function SelectAndHoldCidade(Cidade) {
+    //por o estado como parametro tbm para selecionar as cidades
+    
     setCidadeSelecionada(Cidade)
     setCidadeSelecionada(Cidade)
   }
@@ -227,14 +231,14 @@ export default function TelaCadastro() {
         />
       </View>
 
-     <View>
+      <View>
         <TextInput
           ///style={styles.input} posteriormente adicionar style
           onChangeText={setDiretor}
           value={diretor}
           placeholder="Nome do Diretor"
         />
-      </View> 
+      </View>
 
       {/* checkbox para seleção de turnos */}
       <View style={styles.checkboxTurnos}>
@@ -292,8 +296,9 @@ export default function TelaCadastro() {
 
           selectedValue={pikerEstado}
           onValueChange={(estadoSelecionadoLocal) => SelectAndHoldEstado(estadoSelecionadoLocal)
-
           }>
+          
+
           {/* usando o {} para incluir um codigo javascript, e comparando o listaEstadosAPI 
           com o tamanho do mesmo e em seguida se é maior que 0 e essa parte onde tem a ultima
           comparação com o && meio que é aceitar o jeito do javascript é assim, o map
@@ -301,9 +306,10 @@ export default function TelaCadastro() {
           aparentimente mostra o nome do item no picker, value e key nao sao mostrados
           e nao sei exatamente para que estao ali. Aparentimente devo fazer uma
           que faça os valores do estadoSelecionado serem recebidos*/}
+
+
           {listaEstadosAPI && listaEstadosAPI.length > 0 && listaEstadosAPI.map((estado) =>
             < Picker.Item label={estado.descricao} value={estado.id} key={estado.id} />)
-
 
           }
 
@@ -315,12 +321,11 @@ export default function TelaCadastro() {
         <Picker
 
           selectedValue={pikerCidade}
-          onValueChange={(itemValue) =>
-            setPikerCidade(itemValue)
+          onValueChange={(cidadeSelecionadaLocal) => SelectAndHoldCidade(cidadeSelecionadaLocal)
           }>
 
           {listaCidadesAPI && listaCidadesAPI.length > 0 && listaCidadesAPI.map((cidade) =>
-            <Picker.Item label={cidade.descicao} value={cidade.id} key={cidade.id} />)}
+            <Picker.Item label={cidade.descricao} value={cidade.id} key={cidade.id} />)}
 
         </Picker>
       </View>
