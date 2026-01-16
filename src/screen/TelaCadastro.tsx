@@ -1,9 +1,9 @@
 
 
-import { FlatList, View, Text, TextInput } from 'react-native';
+import {  View, Text, TextInput } from 'react-native';
 import styles from './StylesGlobal';
 import { useEffect, useState } from 'react';
-import { GetEstadoAPI, GetCidadeAPI, APICadastroSchool, EscolasApi } from '../Services/Api';
+import { GetEstadoAPI, GetCidadeAPI, APICadastroSchool } from '../Services/Api';
 import { Button } from 'react-native-paper';
 
 import { Picker } from '@react-native-picker/picker';
@@ -66,8 +66,8 @@ export default function TelaCadastro() {
     setCidadeSelecionada(Cidade)
     setCidadeSelecionada(Cidade)
   }
-  /* usar o return no useeffect:
-  quando saio do componente ira executar oq esta no return
+  /*useEffect quando entra na tela
+
   */
   useEffect(() => {
 
@@ -320,7 +320,7 @@ export default function TelaCadastro() {
         <Text> Cidades </Text>
         <Picker
 
-          selectedValue={pikerCidade}
+          selectedValue={listaCidadesAPI}
           onValueChange={(cidadeSelecionadaLocal) => SelectAndHoldCidade(cidadeSelecionadaLocal)
           }>
 
