@@ -72,9 +72,17 @@ export default function TelaCadastro() {
   useEffect(() => {
 
     GetEstadoAPI(setListaEstadosAPI)
-    GetCidadeAPI(setListaCidadesAPI)
+    
 
   }, [])
+  //segundo useeffect para alterar o piker de 
+  // cidades sempre que se selecionar um novo estado
+  useEffect(() => {
+
+    GetCidadeAPI(setListaCidadesAPI)
+
+  }, [estado_id])
+
 
   const lista = [
     {
